@@ -1,7 +1,5 @@
 FROM centos
 
-RUN echo "Same commands as Test Kitchen will add to standard Dockerfile"
-
 # This is the "centos" specific part
 RUN yum clean all
 RUN yum install -y sudo openssh-server openssh-clients which curl
@@ -16,3 +14,4 @@ RUN echo 'kitchen ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 # SSHD (Test Kitchen issues?)
 RUN yum install -y openssl
 CMD service sshd restart
+
