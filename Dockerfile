@@ -13,8 +13,8 @@ RUN useradd -d /home/kitchen -m -s /bin/bash kitchen
 RUN echo kitchen:kitchen | chpasswd
 RUN echo 'kitchen ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-
-RUN /etc/init.d/sshd start
+RUN yum install -y openssl
+#RUN /etc/init.d/sshd start
 CMD service sshd restart
  
 #RUN echo "Done"
